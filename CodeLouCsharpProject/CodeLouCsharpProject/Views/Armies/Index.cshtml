@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CodeLouCsharpProject.Models.Army>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ruleset)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SquadCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Points)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ruleset)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SquadCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Points)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArmyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArmyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArmyID })
+        </td>
+    </tr>
+}
+
+</table>
