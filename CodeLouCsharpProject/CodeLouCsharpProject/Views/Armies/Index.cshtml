@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<CodeLouCsharpProject.Models.Army>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Army Data Tracker";
 }
 
-<h2>Index</h2>
+<h2>Army Data Tracker</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Army", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Points)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArmyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArmyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArmyID })
+            @Html.ActionLink("Update", "Edit", new { id=item.ArmyID }) |
+            @Html.ActionLink("Data", "Details", new { id=item.ArmyID }) |
+            @Html.ActionLink("Remove", "Delete", new { id=item.ArmyID })
         </td>
     </tr>
 }

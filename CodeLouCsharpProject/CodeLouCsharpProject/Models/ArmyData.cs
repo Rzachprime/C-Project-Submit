@@ -28,5 +28,46 @@ namespace CodeLouCsharpProject.Models
     {
         public DbSet<Army> Armies { get; set; }
 
+        public ArmyDataContext()
+        {
+            Database.SetInitializer<ArmyDataContext>(new ArmyInitializer());
+        }
+
+        public class ArmyInitializer : DropCreateDatabaseIfModelChanges<ArmyDataContext>
+        {
+        
+            //seed data for new database
+
+            public override void InitializeDatabase(ArmyDataContext dbContext)
+            {
+                base.InitializeDatabase(dbContext);
+
+                if (!dbContext.Armies.Any(x => x.Ruleset == "Warhammer 40k"))
+                {
+                    dbContext.Armies.Add(new Models.Army()
+                    {
+                        Ruleset = "Warhammer 40k",
+                        Faction = "Tau",
+                        SquadCount = 12,
+                        Points = 1850
+
+                    });
+                }
+
+                 if (!dbContext.Armies.Any(x => x.Ruleset == "Age of Sigmar"))
+                    {
+                        dbContext.Armies.Add(new Models.Army()
+                        {
+                            Ruleset = "Age of Sigmar",
+                            Faction = "Death",
+                            SquadCount = 15,
+                            Points = 1990
+
+                        });
+                        dbContext.SaveChanges();
+                    }
+
+                }
+            }
+        }
     }
-}
