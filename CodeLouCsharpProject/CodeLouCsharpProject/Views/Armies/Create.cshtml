@@ -4,22 +4,38 @@
     ViewBag.Title = "New Army";
 }
 
+
+@* Text for army creation*@
 <h2>New Army Creation</h2>
+<div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+        <h2>How to create a new Army</h2>
+        
+           <p>Enter the Ruleset or Rulebook the army uses in the Ruleset form.</p>
+           <p>Enter the Faction or Subgroup the Army is part of in the Faction Form.</p> 
+           <p>Enter the number of Squads or Units the Army contains in the SquadCount Form.</p>
+           <p>Enter the number or Points the army is valued at by the rules in the Points Form.</p>
+    </div>
+    <div class="col-xs-1"></div>
 
+</div>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
+   
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Army</h4>
+        <h4>Army Creation</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "alert-danger" })
+       
         <div class="form-group">
             @Html.LabelFor(model => model.Ruleset, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Ruleset, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ruleset, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Ruleset, "", new { @class = "alert-danger" })
             </div>
         </div>
 
@@ -27,7 +43,7 @@
             @Html.LabelFor(model => model.Faction, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Faction, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Faction, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Faction, "", new { @class = "alert-danger" })
             </div>
         </div>
 
@@ -35,7 +51,7 @@
             @Html.LabelFor(model => model.SquadCount, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SquadCount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SquadCount, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.SquadCount, "", new { @class = "alert-danger" })
             </div>
         </div>
 
@@ -43,7 +59,7 @@
             @Html.LabelFor(model => model.Points, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Points, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Points, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Points, "", new { @class = "alert-danger" })
             </div>
         </div>
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -12,9 +13,11 @@ namespace CodeLouCsharpProject.Models
         public int ArmyID { get; set; }
 
         //ruleset name field for database
+        [Required]
         public string Ruleset { get; set; }
 
         // Faction name field for database
+        [Required]
         public string Faction { get; set; }
 
         //Number of squads/units in army
