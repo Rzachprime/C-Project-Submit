@@ -36,6 +36,7 @@ namespace CodeLouCsharpProject.Models
             Database.SetInitializer<ArmyDataContext>(new ArmyInitializer());
         }
 
+        // class to create seeded database when first running project. Will also reseed and empty database.
         public class ArmyInitializer : DropCreateDatabaseIfModelChanges<ArmyDataContext>
         {
         

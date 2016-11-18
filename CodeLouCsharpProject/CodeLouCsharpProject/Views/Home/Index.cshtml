@@ -5,29 +5,63 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h1 >My C# Project</h1>
+        <h1>My C# Project</h1>
         <p class="lead">This is my Wargaming Army Tracker Project.</p>
     </div>
 </div>
 
 
-    <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-10">
+<div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
         <h2>About the tracker</h2>
         <p>
             The Army Tracker is a project using Asp.Net with Entity Framework to build a simple
-            Wargaming Army Tracker. The project uses Entity Framework to build a sql database 
+            Wargaming Army Tracker. The project uses Entity Framework to build a sql database
             that contains the list of Rulesets, Factions, Squad Counts, and Point Cost for each
             army entered.
         </p>
 
         <p>
-            In the future I would like to expand this project to encompass a multiple sql table 
+            In the future I would like to expand this project to encompass a multiple sql table
             design so that I can also store the vast amount of army variations that you can build
-            with each ruleset.  
+            with each ruleset.
         </p>
-            </div>
-        <div class="col-xs-1"></div>
+    </div>
+    <div class="col-xs-1"></div>
 
+</div>
+@*Random Fact generator using Razor syntax *@
+<div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+        <h4>Random Facts(refresh page to see them change.)</h4>
+        @* Variable to hold random numbers*@
+        @{ 
+            Random rnd = new Random();
+            int num2 = rnd.Next(1, 6);
+            }
+        @*if logic to display random facts on page load*@
+        @if (num2 == 1)
+        {
+            <p>The Sun is the largest object in the Solar System!</p>
+        }
+        else if (num2 ==2)
+        {
+            <p>The Moon affects the tides.</p>
+        }
+        else if (num2 == 3)
+        {
+            <p>Jupiter is the largest planet in the Solar Sytem.</p>
+        }
+        else if (num2 == 4)
+        {
+            <p>Light is the fastest known object in the universe.</p>
+        }
+        else
+        {
+            <p>Humor is subjective.</p>
+        }
+    </div>
+    <div class="col-xs-1"></div>
     </div>
