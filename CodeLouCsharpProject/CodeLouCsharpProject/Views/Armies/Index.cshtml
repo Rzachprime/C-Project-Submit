@@ -9,7 +9,11 @@
 <p>
     @Html.ActionLink("New Army", "Create")
 </p>
-<table class="table">
+
+@* responsive table adds scrollbar on bottom when screen to small to keep table readable
+    see bootstrap documentation for more info*@
+<div class="table-responsive">
+<table class="table table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ruleset)
@@ -49,3 +53,4 @@
 }
 
 </table>
+</div>
